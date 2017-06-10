@@ -16,3 +16,8 @@
 //= require turbolinks
 //= require_tree .
 
+$('#enddate').bootstrapMaterialDatePicker({ weekStart : 0 });
+$('#startdate').bootstrapMaterialDatePicker({ weekStart : 0 }).on('change', function(e, date)
+{
+$('#enddate').bootstrapMaterialDatePicker('setMinDate', date);
+});

@@ -33,8 +33,7 @@
 
   <div class="field">
     <%= form.label :enddate %>
-    <%= form.datetime_select :enddate, id: :pageant_enddate %>
-    <%= form.date_select :enddate, class: "datepicker"%>
+    <%= form.text_field :enddate, class: "datepicker" %>
   </div>
 
   <div class="field">
@@ -42,13 +41,14 @@
     
     <%= form.time_zone_select :time_zone, nil, {}, class: 'form-control' %>
   </div>
-
+<br>
   <div class="field">
     <%= form.label :image %>
     <%= form.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
   </div>
-
+  <br>
   <div class="actions">
-    <%= form.submit class:"waves-effect waves-light btn" %>
+    <%= form.submit class:"waves-effect btn-raised btn-success" %>
   </div>
 <% end %>
+

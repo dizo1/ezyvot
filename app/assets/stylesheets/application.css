@@ -14,3 +14,9 @@ ew21/*
  *= require_self
  */
 
+.cardbg{
+    background-image: url("pageant.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: cover;
+}

@@ -34,6 +34,15 @@
   <strong>Image:</strong>
   <%= image_tag( @pageant.image, size: "180x180" ) %>
 </p>
+<div>
+  <% @contestants.each do |contestant| %>
+  <div class="row"><%= contestant.con_num %></div>
+  <div class="row"><%= image_tag( contestant.image, size: "120x120") %></div>
+<%  end %>
+</div>
 
-<%= link_to 'Edit', edit_pageant_path(@pageant) %> |
+<div>
+<%= link_to "Add Contestant", new_pageant_contestant_path(@pageant) %>
+<%= link_to 'Edit', edit_pageant_path(@pageant) %> 
 <%= link_to 'Back', pageants_path %>
+</div>
