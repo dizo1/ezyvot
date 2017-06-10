@@ -1,0 +1,37 @@
+<%= form_for([@pageant, @contestant]) do |form| %>
+  <% if contestant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(contestant.errors.count, "error") %> prohibited this contestant from being saved:</h2>
+
+      <ul>
+      <% contestant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :con_num %>
+    <%= form.number_field :con_num, id: :contestant_con_num %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :contestant_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :profile %>
+    <%= form.text_area :profile, id: :contestant_profile %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image, id: :contestant_image, accept: 'image/jpeg,image/gif,image/png' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

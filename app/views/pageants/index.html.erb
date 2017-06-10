@@ -1,0 +1,40 @@
+
+<h3 align="center">Pageants</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Category</th>
+      <th>Startdate</th>
+      <th>Enddate</th>
+      <th>Time zone</th>
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pageants.each do |pageant| %>
+      <tr>
+        <td><%= pageant.name %></td>
+        <td><%= pageant.description %></td>
+        <td><%= pageant.category %></td>
+        <td><%= pageant.startdate %></td>
+        <td><%= pageant.enddate %></td>
+        <td><%= pageant.time_zone %></td>
+        <td><%= image_tag( pageant.image, size: "180x180" ) %></td>
+        <%  if user_signed_in? && pageant.user_id == current_user.id %>
+        
+        <td><%= link_to 'Edit', edit_pageant_path(pageant) %></td>
+        <td><%= link_to 'Destroy', pageant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    <%  end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pageant', new_pageant_path %>

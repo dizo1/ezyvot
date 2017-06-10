@@ -1,0 +1,39 @@
+
+
+<p>
+  <strong>Name:</strong>
+  <%= @pageant.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @pageant.description %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @pageant.category %>
+</p>
+
+<p>
+  <strong>Startdate:</strong>
+  <%= @pageant.startdate %>
+</p>
+
+<p>
+  <strong>Enddate:</strong>
+  <%= @pageant.enddate %>
+</p>
+
+<p>
+  <strong>Time zone:</strong>
+  <%= @pageant.time_zone %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag( @pageant.image, size: "180x180" ) %>
+</p>
+
+<%= link_to 'Edit', edit_pageant_path(@pageant) %> |
+<%= link_to 'Back', pageants_path %>

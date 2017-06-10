@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  con_num: 1
+  name: MyString
+  profile: MyText
+  image: MyString
+
+two:
+  con_num: 1
+  name: MyString
+  profile: MyText
+  image: MyString
