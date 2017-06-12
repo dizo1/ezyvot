@@ -8,21 +8,19 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     
-    <!-- Material Design fonts -->
-  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
-  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    
     <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/4.0.2/bootstrap-material-design.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Bootstrap -->
   <!--<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
   <!-- Bootstrap Material Design -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/4.0.2/bootstrap-material-design.css">
-  <link rel="stylesheet" type="text/css" href="dist/css/bootstrap-material-design.css">
-  <link rel="stylesheet" type="text/css" href="dist/css/ripples.min.css">
-    
+
   </head>
 
-  <body>
+  <body class="wrapper">
     <%= render 'layouts/header' %>
     <div class="container"> 
     <%=  render 'layouts/messages' %>
@@ -30,6 +28,13 @@
     </div>
     <!--Here was footer, now he is gone-->
     <%= render "layouts/footer" %>
-   
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"</script>
+   <script>
+		$(".button-collapse").sideNav();
+	</script>
   </body>
 </html>

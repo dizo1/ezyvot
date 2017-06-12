@@ -1,4 +1,5 @@
-<%= form_with(model: pageant, local: true, :html => {class: "form-horizontal", multipart: true, role: "form"}) do |form| %>
+<div class=" card container">
+<%= form_with(model: pageant, local: true, :html => {class: "form-horizontal ", multipart: true, role: "form"}) do |form| %>
   <% if pageant.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(pageant.errors.count, "error") %> prohibited this pageant from being saved:</h2>
@@ -11,35 +12,36 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="input-field col s8">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :pageant_name %>
+    <%= form.text_field :name, id: :pageant_name, class: "col-md-8 control-label" %>
   </div>
 
-  <div class="field">
+  <div class="input-field col s4">
     <%= form.label :description %>
-    <%= form.text_area :description, id: :pageant_description %>
+    <%= form.text_area :description, id: :pageant_description, class: "col-md-8 control-label " %>
   </div>
 
-  <div class="field">
+  <div class="input-field col s4">
     <%= form.label :category %>
-    <%= form.text_field :category, id: :pageant_category %>
+    <%= form.text_field :category, id: :pageant_category, class: "col-md-8 control-label" %>
   </div>
 
   <div class="field">
-    <%= form.label :startdate %>
-    <%= form.datetime_select :startdate, id: :pageant_startdate %>
+    <%= form.label :startdate, 'startdate', class: 'sr-only' %>
+    <%= form.date_field :startdate, class: 'form-control col-md-8 control-label', placeholder: 'Enter start Date' %>
   </div>
-
+  <br>
   <div class="field">
-    <%= form.label :enddate %>
-    <%= form.text_field :enddate, class: "datepicker" %>
+    <%= form.label :enddate, 'enddate', class: 'sr-only' %>
+    <%= form.date_field :enddate, class: "form-control col-md-8 control-label", placeholder: "Enter the end date" %>
   </div>
+  <br>
 
   <div class="field">
     <%= form.label :time_zone %>
     
-    <%= form.time_zone_select :time_zone, nil, {}, class: 'form-control' %>
+    <%= form.time_zone_select :time_zone, nil, {}, class: 'form-control col-md-8 control-label' %>
   </div>
 <br>
   <div class="field">
@@ -48,7 +50,7 @@
   </div>
   <br>
   <div class="actions">
-    <%= form.submit class:"waves-effect btn-raised btn-success" %>
+    <%= form.submit class:"waves-effect btn-raised deep orange darken-4 btn" %>
   </div>
 <% end %>
-
+</div>

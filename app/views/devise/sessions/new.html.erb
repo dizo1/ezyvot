@@ -1,7 +1,8 @@
+<div class="form-group">
 <h2 align="center">Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
@@ -19,8 +20,9 @@
   <% end -%>
 
   <div class="actions">
-    <%= f.submit "Log in", class:"waves-effect waves-light btn-success" %>
+    <%= f.submit "Log in", class:"waves-effect btn-raised deep orange darken-4 btn" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>

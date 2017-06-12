@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :con_num %>
+    <%= form.label :con_num, "Number" %>
     <%= form.number_field :con_num, id: :contestant_con_num %>
   </div>
 
@@ -25,13 +25,13 @@
     <%= form.label :profile %>
     <%= form.text_area :profile, id: :contestant_profile %>
   </div>
-
+  <br>
   <div class="field">
     <%= form.label :image %>
     <%= form.file_field :image, id: :contestant_image, accept: 'image/jpeg,image/gif,image/png' %>
   </div>
-
+  <b>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class:"waves-effect btn-raised deep orange darken-4 btn" %>
   </div>
 <% end %>

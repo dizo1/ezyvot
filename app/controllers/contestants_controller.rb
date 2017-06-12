@@ -1,5 +1,5 @@
 class ContestantsController < ApplicationController
-  before_action :set_contestant, only: [:show, :edit, :update, :destroy]
+  before_action :set_contestant, only: [:edit, :update, :destroy, :upvote]
   before_action :set_pageant
   before_action :authenticate_user!
   # GET /contestants
@@ -10,11 +10,14 @@ class ContestantsController < ApplicationController
 
   # GET /contestants/1
   # GET /contestants/1.json
-  #def show
-  #end
+  def show
+    @contestant = Contestant.find(params[:id])
+    @contestant.pageant_id = pageant.id
+  end
 
   # GET /contestants/new
   def new
+    #@pageant = Pageant.find(params[:id])
     @contestant = Contestant.new
   end
 
@@ -62,6 +65,14 @@ class ContestantsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def upvote
+    @contestant = Contestant.find(params[:id])
+    @contestant.upvote_from current_user
+    #current_user.upvotes @contestant
+    redirect_to pageant_path
+  end
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.

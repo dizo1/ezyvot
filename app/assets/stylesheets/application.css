@@ -13,11 +13,32 @@ ew21/*
  *= require_tree .
  *= require_self
  */
-
+body{
+    margin-top: 50px;
+    background-color: #dfe3ee;
+}
+.wrapper{
+    background: #d2cfcf;
+}
+.brand-logo{
+    font-weight: bold;
+    margin-left: 15px;
+}
 
 ul li{
   display: inline;
 }
-li a {
+
+a:hover, a:visited, a:link, a:active
+{
     text-decoration: none;
+}
+.input-field{
+    position: center;
+}
+.heading{
+    margin-bottom: 20px;
+}
+.indigo{
+    margin-bottom: 20px;
 }
