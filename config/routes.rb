@@ -7,9 +7,11 @@ Rails.application.routes.draw do
   get 'users/sign_out' => "devise/sessions#destroy"
 end
 
+get "contestants/like" => "contestants#like"
+
   resources :contestants do 
     member do
-      put "like" => "contestants#upvote"
+      put 'like' => 'contestants#upvote'
     end
   end
   

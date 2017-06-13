@@ -12,36 +12,36 @@
     </div>
   <% end %>
 
-  <div class="input-field col s8">
+  <div class="input-field col s4">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :pageant_name, class: "col-md-8 control-label" %>
+    <%= form.text_field :name, id: :pageant_name %>
   </div>
 
   <div class="input-field col s4">
     <%= form.label :description %>
-    <%= form.text_area :description, id: :pageant_description, class: "col-md-8 control-label " %>
+    <%= form.text_area :description, id: :pageant_description %>
   </div>
 
   <div class="input-field col s4">
     <%= form.label :category %>
-    <%= form.text_field :category, id: :pageant_category, class: "col-md-8 control-label" %>
+    <%= form.text_field :category, id: :pageant_category %>
   </div>
 
   <div class="field">
     <%= form.label :startdate, 'startdate', class: 'sr-only' %>
-    <%= form.date_field :startdate, class: 'form-control col-md-8 control-label', placeholder: 'Enter start Date' %>
+    <%= form.date_field :startdate, placeholder: 'Enter start Date' %>
   </div>
   <br>
   <div class="field">
     <%= form.label :enddate, 'enddate', class: 'sr-only' %>
-    <%= form.date_field :enddate, class: "form-control col-md-8 control-label", placeholder: "Enter the end date" %>
+    <%= form.date_field :enddate, placeholder: "Enter the end date" %>
   </div>
   <br>
 
   <div class="field">
     <%= form.label :time_zone %>
     
-    <%= form.time_zone_select :time_zone, nil, {}, class: 'form-control col-md-8 control-label' %>
+    <%= form.time_zone_select :time_zone, nil, {}, class: 'form-control col-md-12 control-label' %>
   </div>
 <br>
   <div class="field">

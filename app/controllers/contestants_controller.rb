@@ -70,7 +70,8 @@ class ContestantsController < ApplicationController
     @contestant = Contestant.find(params[:id])
     @contestant.upvote_from current_user
     #current_user.upvotes @contestant
-    redirect_to pageant_path
+    #redirect_to pageants_path(@pageant.id)
+    redirect_to pageant_path(@pageant.id)
   end
   
 
@@ -80,7 +81,7 @@ class ContestantsController < ApplicationController
       @contestant = Contestant.find(params[:id])
     end
     def set_pageant
-      @pageant = Pageant.find(params[:pageant_id])
+      @pageant = Pageant.find_by_id(params[:pageant_id])
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def contestant_params
