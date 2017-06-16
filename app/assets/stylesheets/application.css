@@ -17,6 +17,10 @@ body{
     margin-top: 50px;
     background-color: #dfe3ee;
 }
+
+.nav-wrapper{
+    z-index: 999;
+}
 .wrapper{
     background: #d2cfcf;
 }
@@ -74,4 +78,7 @@ ul li{
 }
 #margin-down{
     margin-bottom: 47px;
+}
+.rad-border{
+    border-radius: 6px;
 }

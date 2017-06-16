@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'users/sign_out' => "devise/sessions#destroy"
 end
 
-get "contestants/like" => "contestants#like"
+#get 'contestants/:id/like'
 
   resources :contestants do 
     member do
