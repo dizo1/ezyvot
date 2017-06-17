@@ -7,7 +7,7 @@
 <h3 align="center">Contests</h3><hr />
     <div class="row">
     <% @pageants.each do |pageant| %>
-      <div class="col s12 m6 13">
+      <div class="col s12 m6 3">
         <div class="=thumbnail">
           <h5><%= link_to pageant.name, pageant_path(pageant) %></h5>
           <%= image_tag( pageant.image, size: "140x140", class: "img-responsive" ) %>

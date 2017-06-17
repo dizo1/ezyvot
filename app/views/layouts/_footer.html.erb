@@ -3,13 +3,15 @@
             <div class="row">
               <div class="col l6 s12">
                 <h5 class="white-text">Ezyvote</h5>
-                <p class="grey-text text-lighten-4">A contest Application.</p>
+                <p class="grey-text text-lighten-4">A contests Application.</p>
               </div>
               <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Home</h5>
                 <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Contests</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Create contest</a></li>
+                  <!--<li><a class="grey-text text-lighten-3" href="#!">Contests</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Create contest</a></li>-->
+                  <li><%= link_to "Contests", pageants_path(@pageant), class: "links" %></li>
+                  <li><%= link_to "Create Contest", new_pageant_path, class: "links" %></li>
                   <!--<li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
                   <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>-->
                 </ul>

@@ -69,13 +69,13 @@ class ContestantsController < ApplicationController
   def upvote
     @contestant = Contestant.find(params[:id])
     #current_user = User.find_by_id(session[:user_id])
+    
     @contestant.upvote_from current_user
     #current_user.upvotes @contestant
     #redirect_to pageants_path(@pageant.id)
-    flash[:success] = "You have voted successfully"
-    #redirect_to pageants_path(@pageant)
+    flash[:success] = "Thank you for voting"
+    redirect_to pageant_path(@contestant.pageant.id)
   end
-  
 
   private
     # Use callbacks to share common setup or constraints between actions.
