@@ -15,17 +15,17 @@ ew21/*
  */
  
  
- .jumbotron h1,h2{
-    color:black;
-    text-align:center;
+ .jumbotron h1{
+    color: black;
+    text-align: center;
     margin-bottom:30px;
     letter-spacing: -1px;
     font-weight: bold;
 }
 .jumbotron{
-    background-image: asset-url('pageant.jpg');
-    background-size:cover;
-    height:500px;
+    background-image: url('pageant.jpg');
+    background-size: cover;
+    height: 500px;
 }
  
 body{
