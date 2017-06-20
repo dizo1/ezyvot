@@ -1,6 +1,6 @@
 
 <div class="jumbotron center">
- <h1>Welcome to Ezyvote</h1>  
+ <h1 text-center>Welcome to Ezyvote</h1>  
  <!--<h2>The best recipe sharing app!</h2>-->
  <p><%= link_to "Sign up Today", sign_in_path, class: "btn btn-danger btn-lg btn-xlarge" %></p>
 </div>
@@ -11,11 +11,11 @@
     <% @pageants.each do |pageant| %>
       <div class="col-xs-6 col-md-3">
         <div class="=thumbnail">
-          <h5><%= link_to pageant.name, pageant_path(pageant) %></h5>
-          <%= image_tag( pageant.image, size: "140x140" ) %>
-        </div>
-      </div>
-      <% end %>
-      </div>
+             <h5><%= link_to pageant.name, pageant_path(pageant) %></h5>
+          <%= image_tag( pageant.image, size: "140x140", class: "img-rounded" ) %>
+            </div>
+            </div>
+          <% end %>
+         </div>
 
 
