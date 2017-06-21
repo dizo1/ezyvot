@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
   
-  devise_for :users, controllers: { sessions: "devise/sessions" }
+  devise_for :users, controllers: { :omniauth_callbacks => "user/omniauth_callbacks"}
   devise_scope :user do
   get 'sign_in', to: 'devise/sessions#new'
   #get "sign_in", to: "user/user_sessions#create"
   get 'users/sign_out' => "devise/sessions#destroy"
 end
+
+#devise_scope :user do
+#  get 'sign_in', :to => 'devise/sessions#new', :as => :new_user_session
+#  get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
+#end
 
 #get 'contestants/:id/like'
 

@@ -1,12 +1,11 @@
 <div class=" card container" id="margin-down">
-<h3 align="center">Login</h4>
 
 <div class="container">
     <div class="row">
     	<div class="col-md-4 col-md-offset-4">
     		<div class="panel panel-default">
 			  	<div class="panel-heading">
-			    	<h3 class="panel-title">Login via site</h3>
+			    	<h3 class="panel-title" align="center">Login via site</h3>
 			 	</div>
 			  	<div class="panel-body">
 			  	  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -46,10 +45,14 @@
 			      	</form>
                       <hr/>
                     <center><h4>OR</h4></center>
-                    <input class="btn btn-lg btn-facebook btn-block" type="submit" value="Login via facebook">
+                    <%= link_to "Login via facebook", user_facebook_omniauth_authorize_path ,class:"btn btn-lg btn-facebook btn-block"  %>
+                    <!--<input class="btn btn-lg btn-facebook btn-block" type="submit" value="Login via facebook">-->
+			   
 			    </div>
-			    <% end %>
+			 
+			   <% end %>
 			</div>
 		</div>
 	</div>
+</div>
 </div>
