@@ -13,8 +13,7 @@ ew21/*
  *= require_tree .
  *= require_self
  */
- 
- 
+
  .jumbotron h1{
     color: black;
     text-align: center;
@@ -137,3 +136,7 @@ ul li{
     .btn-facebook.active {
         background-color: #0d2456 \9 !important;
     }
+.p_size{
+    max-width: 700px;
+    
+}
