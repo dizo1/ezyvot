@@ -74,11 +74,10 @@
 <h3>Trial starts here</h3>
     <% @contestants.each do |contestant| %>
     <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
-      
-                <div class="well">
+                <div class="well" style="padding:7px;">
                     <div class="card-block">
                         <figure class="profile">
-                            <center><%= image_tag( contestant.image, size: "200x210", class: 'img-rounded') %></center>
+                            <center><%= image_tag( contestant.image,size: "240x200", class: 'img-responsive') %></center>
                         </figure>
                         <h4 align="center" class="card-title mt-3"><p><b><%= contestant.name%></b></p></h4>
                         <div class="card-text">
@@ -95,11 +94,7 @@
                
             </div>
              <%  end %>
-
-
-
-</div>
-</div>
+ 
 
 <!--</div> closing col-8 -->
 

@@ -68,14 +68,18 @@ class ContestantsController < ApplicationController
   
   def upvote
     @contestant = Contestant.find(params[:id])
-    #current_user = User.find_by_id(session[:user_id])
-    
+    if current_user.voted_for?(@contestant) 
+      #if @contestant.voted_for.last.updated_at < (Time.now - 24.hours)
+      flash[:notice] = "You have already voted for today!"
+      redirect_to root_path
+     # end
+    else
     @contestant.upvote_from current_user
-    #current_user.upvotes @contestant
-    #redirect_to pageants_path(@pageant.id)
     flash[:success] = "Thank you for voting"
     redirect_to pageant_path(@contestant.pageant.id)
+    end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

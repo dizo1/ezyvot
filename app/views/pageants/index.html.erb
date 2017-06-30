@@ -1,8 +1,10 @@
 
-<div class="jumbotron center">
- <h1 text-center>Welcome to Ezyvote</h1>  
+<div class="jumbotron center" style="padding-top: 120px;">
+    <div class="b">
+ <h1 text-center style="color: #3b5998;">Welcome to ezyvote</h1>  
  <!--<h2>The best recipe sharing app!</h2>-->
- <p><%= link_to "Sign up Today", sign_in_path, class: "btn btn-danger btn-lg btn-xlarge" %></p>
+ <p><%= link_to "Sign up Today", sign_in_path, class: "btn btn-primary btn-lg btn-xlarge" %></p>
+ </div>
 </div>
 
 
@@ -10,12 +12,16 @@
     <div class="row">
     <% @pageants.each do |pageant| %>
       <div class="col-xs-6 col-md-3">
-        <div class="=thumbnail">
-             <h5><%= link_to pageant.name, pageant_path(pageant) %></h5>
-          <%= image_tag( pageant.image, size: "140x140", class: "img-rounded" ) %>
+        <div class=" "  style="text-align:text-align:center;">
+          <%= image_tag( pageant.image, class: "img-rounded", size:"200x200") %>
+          <div class="und">
+          <h5><%= link_to pageant.name, pageant_path(pageant) %></h5>
+          </div>
             </div>
             </div>
           <% end %>
-         </div>
+    </div>
+    
+    
 
 
