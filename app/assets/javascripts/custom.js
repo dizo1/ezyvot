@@ -8,3 +8,8 @@ $(document).on('ready page:change', function() {
   Waves.displayEffect(); // Initialize buttons wave effects
  $(".button-collapse").sideNav(); // Initialize collapse button
 });
+
+function set_time_zone_offset() {
+    var current_time = new Date();
+    $.cookie('time_zone', current_time.getTimezoneOffset());
+}

@@ -10,28 +10,37 @@
       </ul>
     </div>
   <% end %>
-
+  
+  <div class="panel panel-primary p-size">
+  <div class="panel-heading"><center><h4>Add a contestant</h4></center></div>
+  <hr>
+  <div class="panel-body">
+ <form class="form-horizontal">
   <div class="field">
-    <%= form.label :con_num, "Number" %>
-    <%= form.number_field :con_num, id: :contestant_con_num %>
+    <%= form.label :con_num, "Number", class: "control-label col-sm-3" %>
+    <%= form.number_field :con_num, id: :contestant_con_num, class: "form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :contestant_name %>
+    <%= form.text_field :name, id: :contestant_name, class: "form-control"%>
   </div>
 
   <div class="field">
     <%= form.label :profile %>
-    <%= form.text_area :profile, id: :contestant_profile %>
+    <%= form.text_area :profile, id: :contestant_profile, class: "form-control" %>
   </div>
   <br>
   <div class="field">
     <%= form.label :image %>
-    <%= form.file_field :image, id: :contestant_image, accept: 'image/jpeg,image/gif,image/png' %>
+    <%= form.file_field :image, id: :contestant_image, accept: 'image/jpeg,image/gif,image/png', class: "form-control" %>
   </div>
   <b>
   <div class="actions">
-    <%= form.submit class:"waves-effect btn-raised deep orange darken-4 btn" %>
+    <%= form.submit class:"btn btn-md btn-success " %>
   </div>
 <% end %>
+</form>
+</div>
+</div>
+</div>
