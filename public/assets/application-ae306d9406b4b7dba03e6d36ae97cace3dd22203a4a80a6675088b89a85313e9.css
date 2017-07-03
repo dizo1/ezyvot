@@ -1,0 +1,235 @@
+ew21/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ 
+ 
+.img-responsive{
+        height: 200px;
+}
+
+.und a:hover {
+    text-decoration: none;
+    text-align: center;
+}
+
+.panel-heading{
+    background-color: #3b5998;
+    color: #fff;
+}
+
+.und a {
+    text-align: center;
+    padding-left: 65px;
+}
+
+
+.img-rounded {
+    border-radius: 6px !important;
+    border: 6px solid white !important;
+}
+ .footer-bottom {
+    background-color: #15224f;
+    min-height: 30px;
+    width: 100%;
+}
+
+.copyright {
+    color: #fff;
+    line-height: 30px;
+    min-height: 30px;
+    padding: 7px 0;
+}
+
+.design {
+    color: #fff;
+    line-height: 30px;
+    min-height: 30px;
+    padding: 7px 0;
+    text-align: right;
+}
+.icon-bar11 {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+    background: white;
+}
+
+.thumbnail {
+    height: 200px;
+    width: 200px;
+}
+
+
+.b{
+    background-color: rgba(255,255,255,.6);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+
+ .jumbotron h1{
+    color: #3b5998;
+    text-align: center;
+    margin-bottom:30px;
+    letter-spacing: -1px;
+    font-weight: bold;
+    
+}
+.jumbotron{
+    background-image: url('pageant.jpg');
+    background-size: cover;
+    height: 500px;
+    text-align: center;
+    padding-top: 120px;
+   
+}
+
+.thumbnail h5 a:hover{
+    text-decoration: none;
+}
+ 
+body{
+    margin-top: 50px;
+    background-color: #dfe3ee;
+}
+
+.navbar ul li a {
+    color:white;
+    text-decoration: none;
+}
+
+.navbar ul li a:hover {
+    color:#3b5998;
+    text-decoration: none;
+}
+
+.dropdown ul li a{
+        background-color: #3b5998;
+}
+
+.navbar1{
+    border-radius:0px;
+    background-color: #3b5998;
+}
+
+.nav-wrapper{
+    z-index: 999;
+}
+.wrapper{
+    background: #dfe3ee;
+}
+.brand-logo{
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+ul li{
+  display: inline;
+}
+
+/*flash*/
+.alert-error {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+ }
+
+.alert-alert {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+ }
+
+.alert-success {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+ }
+
+.alert-notice {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+ }
+
+
+.links{
+    color:#fff !important;
+    text-decoration:none;
+}
+.input-field{
+    position: center;
+}
+.heading{
+    margin-bottom: 20px;
+}
+.indigo{
+    margin-bottom: 20px;
+}
+#margin-down{
+    margin-bottom: 47px;
+}
+.rad-border{
+    border-radius: 6px;
+}
+
+
+.white{
+    color:#000;
+    background-color:#fff;
+}
+
+.btn-facebook {
+    color: #ffffff;
+    -webkit-text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #2b4b90;
+    *background-color: #133783;
+    background-image: -moz-linear-gradient(top, #3b5998, #133783);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#3b5998), to(#133783));
+    background-image: -webkit-linear-gradient(top, #3b5998, #133783);
+    background-image: -o-linear-gradient(top, #3b5998, #133783);
+    background-image: linear-gradient(to bottom, #3b5998, #133783);
+    background-repeat: repeat-x;
+    border-color: #133783 #133783 #091b40;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3b5998', endColorstr='#ff133783', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+    .btn-facebook:hover,
+    .btn-facebook:focus,
+    .btn-facebook:active,
+    .btn-facebook.active,
+    .btn-facebook.disabled,
+    .btn-facebook[disabled] {
+        color: #ffffff;
+        background-color: #133783 !important;
+        *background-color: #102e6d !important;
+    }
+
+    .btn-facebook:active,
+    .btn-facebook.active {
+        background-color: #0d2456 \9 !important;
+    }
+.p_size{
+    max-width: 700px;
+    
+}
