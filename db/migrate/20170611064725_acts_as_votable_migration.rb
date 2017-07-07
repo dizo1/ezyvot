@@ -1,4 +1,7 @@
 class ActsAsVotableMigration < ActiveRecord::Migration[5.1]
+  
+  scope :recent, -> { where("created_at < ?", 6.hours.ago) }
+  
   def self.up
     create_table :votes do |t|
 
