@@ -14,6 +14,7 @@ ew21/*
  *= require_self
  */
  
+ 
 .img-responsive{
         height: 200px;
 }
@@ -21,6 +22,11 @@ ew21/*
 .und a:hover {
     text-decoration: none;
     text-align: center;
+}
+
+.panel-heading{
+    background-color: #3b5998;
+    color: #fff;
 }
 
 .und a {

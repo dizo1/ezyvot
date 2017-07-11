@@ -5,7 +5,7 @@ class PageantsController < ApplicationController
   # GET /pageants
   # GET /pageants.json
   def index
-    @pageants = Pageant.all
+    @pageants = Pageant.search(params[:search])
   end
 
   # GET /pageants/1

@@ -16,7 +16,7 @@ end
 
   resources :contestants do 
     member do
-      put 'like' => 'contestants#upvote'
+      get 'like' => 'contestants#upvote'
     end
   end
   
