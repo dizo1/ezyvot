@@ -1,25 +1,39 @@
 
 <div class="jumbotron center" style="padding-top: 120px;">
     <div class="b">
- <h1 text-center style="color: #3b5998;">Welcome to ezyvote</h1>  
+ <h1 text-center style="color: #3b5998;"> Welcome to ezyvote </h1>  
  <!--<h2>The best recipe sharing app!</h2>-->
  <p><%= link_to "Sign up Today", sign_in_path, class: "btn btn-primary btn-lg btn-xlarge" %></p>
  </div>
 </div>
 
+<div class="panel panel-default">
+  <div class="panel-heading">
+<h3 align="center">Contests</h3>
+</div>
 
-<h3 align="center">Contests</h3><hr />
+<div class="panel-body" style="margin:10px;">
     <div class="row">
     <% @pageants.each do |pageant| %>
       <div class="col-xs-6 col-md-3">
+  
+        <div class="panel panel-success">
+        <div class="panel-body">
         <div class=" "  style="text-align:text-align:center;">
           <%= image_tag( pageant.image, class: "img-rounded", size:"200x200") %>
+          </div>
+          </div>
+          
+          <div class="panel-footer">
           <div class="und">
-          <h5><%= link_to pageant.name, pageant_path(pageant) %></h5>
+          <h6><span class="glyphicon glyphicon-info-sign " style="color:#23527c;"></span>  <%= link_to pageant.name, pageant_path(pageant) %></h6>
           </div>
             </div>
             </div>
+            </div>
           <% end %>
+        </div>
+    </div>
     </div>
     
     

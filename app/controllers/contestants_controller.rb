@@ -1,8 +1,7 @@
 class ContestantsController < ApplicationController
   before_action :set_contestant, only: [:edit, :update, :destroy, :upvote]
   before_action :set_pageant
-  before_action :already
-
+  #before_action :already
   before_action :authenticate_user!
   # GET /contestants
   # GET /contestants.json
@@ -71,32 +70,22 @@ class ContestantsController < ApplicationController
   def upvote
     @contestant = Contestant.find(params[:id])
     if current_user.voted_for?(@contestant) 
- 
-      if current_user.upvotes.last.updated_at < Time.now - 24.hours
-
-      #if current_user.upvotes.last.updated_at < Time.now - 24.hours
-      flash[:notice] = "You have already voted for today!"
+    #  if @contestant.updated_at < Time.now - 24.hours
+     flash[:notice] = "You have already voted for today!"
       redirect_to root_path
-      end
     else
     @contestant.upvote_from current_user
+   # @upvote.save
     flash[:success] = "Thank you for voting"
     redirect_to pageant_path(@contestant.pageant.id)
+  
+   #   end
     end
   end
 
 
   private
     # Use callbacks to share common setup or constraints between actions.
-<<<<<<< HEAD
-    
-    def already
-     if @contestant.updated_at < Time.now - 24.hours
-       flash[:notice] = "You have already voted"
-       redirect_to root_path
-     end
-    end
-=======
   
    # def already
    #  if @contestant.updated_at < Time.now - 24.hours
@@ -105,7 +94,6 @@ class ContestantsController < ApplicationController
   #     redirect_to root_path
   #   end
   #  end
->>>>>>> 40715729b4ae5f58ff6f080996cd05244a7c1cec
     
     def set_contestant
       @contestant = Contestant.find(params[:id])

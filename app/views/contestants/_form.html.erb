@@ -12,12 +12,12 @@
   <% end %>
   
   <div class="panel panel-primary p-size">
-  <div class="panel-heading"><center><h4>Add a contestant</h4></center></div>
+  <div class="panel-heading"><center><h4> Contestant</h4></center></div>
   <hr>
-  <div class="panel-body">
+  <div class="panel-body" style="margin: 20px;">
  <form class="form-horizontal">
   <div class="field">
-    <%= form.label :con_num, "Number", class: "control-label col-sm-3" %>
+    <%= form.label :con_num, "Number" %>
     <%= form.number_field :con_num, id: :contestant_con_num, class: "form-control" %>
   </div>
 
@@ -36,7 +36,7 @@
     <%= form.file_field :image, id: :contestant_image, accept: 'image/jpeg,image/gif,image/png', class: "form-control" %>
   </div>
   <b>
-  <div class="actions">
+  <div class="actions " style="margin-top:10px;">
     <%= form.submit class:"btn btn-md btn-success " %>
   </div>
 <% end %>
