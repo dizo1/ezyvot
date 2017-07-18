@@ -41,11 +41,11 @@
           <div class="card-small">
             <div class="card-content" style="color: #90949c; padding:10px; font-size:14px;">
     
-              <p> <span class="	glyphicon glyphicon-text-color "></span> &nbsp;Name           : <%= @pageant.name %></p>
-              <p> <span class="glyphicon glyphicon-list-alt "></span> &nbsp;Description    : <%= @pageant.description %></p>
-              <p> <span class="	glyphicon glyphicon-tags "></span> &nbsp;Category       : <%= @pageant.category %></p>
-              <p> <span class="	glyphicon glyphicon-calendar "></span> &nbsp;Start Date     : <%= @pageant.startdate %></p>
-              <p> <span class="	glyphicon glyphicon-minus-sign "></span> &nbsp;End Date       : <%= @pageant.enddate %></p>
+              <p> <i class="fa fa-id-badge"></i> &nbsp;Name           : <%= @pageant.name %></p>
+              <p> <i class="fa fa-address-card-o" aria-hidden="true"></i> &nbsp;Description    : <%= @pageant.description %></p>
+              <p> <i class="fa fa-venus-mars" aria-hidden="true"></i> &nbsp;Category       : <%= @pageant.category %></p>
+              <p> <i class="fa fa-calendar-check-o" aria-hidden="true"></i> &nbsp;Start Date     : <%= @pageant.startdate %></p>
+              <p> <i class="fa fa-calendar-times-o" aria-hidden="true"></i> &nbsp;End Date       : <%= @pageant.enddate %></p>
             
             </div>
             <br/>
@@ -97,7 +97,7 @@
       <div class="panel-body">
          <%= image_tag( contestant.image, size: "190x190", class: 'img-rounded') %>
          <hr>
-         <div class="card-content" style="color: #90949c; padding:10px; font-size: 12px;">
+         <div class="card-content" style="color: #90949c; padding:10px; font-size: 11px;">
           <p> <span class="	glyphicon glyphicon-signal "></span> Contestant Number   : <%= contestant.con_num %></p>
           <!--<p>Contestant Name     : <%= contestant.name%></p>-->
           
