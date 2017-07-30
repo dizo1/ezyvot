@@ -68,18 +68,20 @@ class ContestantsController < ApplicationController
   end
   
   def upvote
+    
     @contestant = Contestant.find(params[:id])
-    if current_user.voted_for?(@contestant) 
+    if current_user.voted_on?(@contestant) && @contestant.updated_at > Time.now - 24.hours.ago
     #  if @contestant.updated_at < Time.now - 24.hours
      flash[:notice] = "You have already voted for today!"
       redirect_to root_path
+    
     else
     @contestant.upvote_from current_user
    # @upvote.save
     flash[:success] = "Thank you for voting"
     redirect_to pageant_path(@contestant.pageant.id)
   
-   #   end
+     # end
     end
   end
 
