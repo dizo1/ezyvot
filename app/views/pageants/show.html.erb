@@ -40,12 +40,11 @@
           <div class="col-md-6">
           <div class="card-small">
             <div class="card-content" style="color: #90949c; padding:10px; font-size:14px;">
-    
-              <p> <i class="fa fa-id-badge"></i> &nbsp;Name           : <%= @pageant.name %></p>
-              <p> <i class="fa fa-address-card-o" aria-hidden="true"></i> &nbsp;Description    : <%= @pageant.description %></p>
-              <p> <i class="fa fa-venus-mars" aria-hidden="true"></i> &nbsp;Category       : <%= @pageant.category %></p>
-              <p> <i class="fa fa-calendar-check-o" aria-hidden="true"></i> &nbsp;Start Date     : <%= @pageant.startdate %></p>
-              <p> <i class="fa fa-calendar-times-o" aria-hidden="true"></i> &nbsp;End Date       : <%= @pageant.enddate %></p>
+              <h4><p> <i class="fa fa-id-badge"></i> &nbsp;<b>Name:</b> <%= @pageant.name %></h4></p>
+              <p> <i class="fa fa-address-card-o" aria-hidden="true"></i> &nbsp;<b>Description:</b> <%= @pageant.description %></p>
+              <p> <i class="fa fa-venus-mars" aria-hidden="true"></i> &nbsp;<b>Category:</b> <%= @pageant.category %></p>
+              <p> <i class="fa fa-calendar-check-o" aria-hidden="true"></i> &nbsp;<b>Start Date:</b> <%= @pageant.startdate %></p>
+              <p> <i class="fa fa-calendar-times-o" aria-hidden="true"></i> &nbsp;<b>End Date:</b> <%= @pageant.enddate %></p>
             
             </div>
             <br/>
@@ -73,55 +72,217 @@
 </div>
 
 
-<div class="row">
 
-  <% @contestants.each do |contestant| %>
-  <!--<div class="col s12 m6 l3">-->
-  <div class="col-md-3">
-   
-    <!--<h4 class="header">Contestant</h4>-->
-    <div class="panel panel-default">
-      <div class="panel-heading" style="text-align:center;">
-         <h4 style="text-align:center; color:gray;"> <%= contestant.name%></h4>
-         <%  if user_signed_in? && current_user.id == @pageant.user_id %>
-          <button type="button" class="btn btn-default btn-sm">
-              <span class="glyphicon glyphicon-pencil "></span> &nbsp; <%= link_to "Edit", edit_pageant_contestant_path(@pageant) %>
-          </button>
-          
-          <button type="button" class="btn btn-default btn-sm">
-              <span class="glyphicon glyphicon-remove "></span> Delete
-            </button>
-            <% end  %>
-      </div>
-      
-      <div class="panel-body">
-         <%= image_tag( contestant.image, size: "190x190", class: 'img-rounded') %>
-         <hr>
-         <div class="card-content" style="color: #90949c; padding:10px; font-size: 11px;">
-          <p> <span class="	glyphicon glyphicon-signal "></span> Contestant Number   : <%= contestant.con_num %></p>
-          <!--<p>Contestant Name     : <%= contestant.name%></p>-->
-          
-          <p> <span class="	glyphicon glyphicon-user "></span> Contestants Profile   : <%= contestant.profile %></p>
-          <p> <span class="	glyphicon glyphicon-check "></span> Contestants Votes   : <%= contestant.get_upvotes.size %></p>
-          
+
+<div class="row">
+    
+        <div class="col-md-8">
+          <div class="panel panel-default">
+    <div class="panel panel-heading">
+       <h4 align="center"> Contestants </h4>
+    </div>
+     <div class="panel-body"> <!--style=" padding: 15px !important; height: 450px; overflow: auto;"-->
+        <div class="row">
+          <% @contestants.each do |contestant| %>
+            <div class="col-md-6">
+            <div class="well well-sm" style="width: 100%;">
+                <div class="row">
+                    <div class="col-sm-6 col-md-5">
+                        
+                        <%= image_tag( contestant.image, size: "190x170", class: 'img-rounded img-responsive') %>
+                    </div>
+                    <div class="col-sm-4 col-md-7">
+                        <h4>
+                           <i class="fa fa-id-badge" aria-hidden="true"></i> <%= contestant.name%>
+                        </h4>
+                        <i class="fa fa-hashtag" aria-hidden="true"></i><small> Contestant No. <%= contestant.con_num %></small><br/>
+                        <i class="fa fa-tag" aria-hidden="true"></i><small>  Age</small><br/>
+                        <i class="fa fa-calendar"></i><small> Hobbies</small><br/>
+                        <i class="fa fa-map-marker" aria-hidden="true"></i><small> &nbsp;  District  </small><br/>
+                        <i class="fa fa-graduation-cap" aria-hidden="true"></i><small> Education </small><br/>
+                       <i class="fa fa-hand-o-right" aria-hidden="true"></i><small> Votes (</small> <span style="color:green; font-weight:bold;"> <%= contestant.get_upvotes.size %> </span>)<br/>
+                        <!-- Split button -->
+                        
+                        <button type="button" class="btn btn-success block btn-block">
+                          <%= link_to like_contestant_url(contestant), method: :get  do %><font color="white">Vote</font>
+                        </button> 
+                      <% end %>
+                    </div>
+                      
+                    </div>
+                    <hr style="border-top: 1px solid rgba(128, 128, 128, 0.37); margin-bottom: 0px !important;">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div style="display:flex; padding-left:5px;">
+                          
+                          <%  if user_signed_in? && current_user.id == @pageant.user_id %>
+                      
+                          <button type="button" class="btn btn-default btn-sm" style="margin-right: 5px;">
+                              <span class="glyphicon glyphicon-pencil "></span> &nbsp; Edit
+                          </button>
+                
+                          <button type="button" class="btn btn-default btn-sm"  style="margin-right: 5px;">
+                            <span class="glyphicon glyphicon-remove "></span> Delete
+                          </button>
+                           <% end  %>
+                          </div>
+                      </div>
+                      
+                      <div class="col-md-6">
+                    <!--social share goes here-->
+                    <div class="social" style="font-size:25px; float:right;">
+                      <!--<i class="fa fa-twitter-square" aria-hidden="true"></i>
+                      <i class="fa fa-instagram" aria-hidden="true"></i>
+                      <i class="fa fa-facebook-square" aria-hidden="true"></i>-->
+                    </div>
+                    </div>
+                    </div>
+                </div> 
+                  
+                </div>
+                
+                <%  end %>
+            </div>
+          </div>
         </div>
-     
-        
-      </div>
-      
-      <div class="panel-footer">
-      <div class="card-small">
-        
-        <div class="card-action">
-          <%= link_to like_contestant_url(contestant), method: :get , class:' glyphicon glyphicon-ok-circle btn btn-block btn-success '  do %>
-          Vote
-        <%  end %>
         </div>
         
-      </div>
+        
+        
+        <div class="col-md-4">
+          <div class="panel panel-default">
+              <div class="panel panel-heading">
+                <h4>Top Runners</h4>
+              </div>
+              <div class="panel-body" style="height: 420px;">
+
+                  
+<div class="row bootstrap snippet">
+    <div class="col-md-12 ">
+      
+          <ul class="list-group list-group-dividered list-group-full">
+            <li class="list-group-item">
+              <div class="media">
+                <div class="media-left">
+                  <a class="avatar avatar-online" href="javascript:void(0)">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                    <i></i>
+                  </a>
+                </div>
+                <div class="media-body">
+                  <div class="pull-right">
+                    <strong><span class="	glyphicon glyphicon-check "></span> Votes: 1120</strong>
+                  </div>
+                  <div><a class="name" href="javascript:void(0)">Bako Shamim</a></div>
+                  <small>Contestant No. 1</small>
+                </div>
+              </div>
+             <hr style="margin-top: 10px !important; margin-bottom: 0px !important;">
+            </li>
+            
+            <li class="list-group-item">
+              <div class="media">
+                <div class="media-left">
+                  <a class="avatar avatar-online" href="javascript:void(0)">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                    <i></i>
+                  </a>
+                </div>
+                <div class="media-body">
+                  <div class="pull-right">
+                    <strong><span class="	glyphicon glyphicon-check "></span> Votes: 1120</strong>
+                  </div>
+                  <div><a class="name" href="javascript:void(0)">Bako Shamim</a></div>
+                  <small>Contestant No. 1</small>
+                </div>
+              </div>
+             <hr style="margin-top: 10px !important; margin-bottom: 0px !important;">
+            </li>
+            
+            <li class="list-group-item">
+              <div class="media">
+                <div class="media-left">
+                  <a class="avatar avatar-online" href="javascript:void(0)">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                    <i></i>
+                  </a>
+                </div>
+                <div class="media-body">
+                  <div class="pull-right">
+                    <strong><span class="	glyphicon glyphicon-check "></span> Votes: 1120</strong>
+                  </div>
+                  <div><a class="name" href="javascript:void(0)">Bako Shamim</a></div>
+                  <small>Contestant No. 1</small>
+                </div>
+              </div>
+             <hr style="margin-top: 10px !important; margin-bottom: 0px !important;">
+            </li>
+            
+            <li class="list-group-item">
+              <div class="media">
+                <div class="media-left">
+                  <a class="avatar avatar-online" href="javascript:void(0)">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                    <i></i>
+                  </a>
+                </div>
+                <div class="media-body">
+                  <div class="pull-right">
+                    <span class="	glyphicon glyphicon-check "></span> Votes: 1120
+                  </div>
+                  <div><a class="name" href="javascript:void(0)">Bako Shamim</a></div>
+                  <small>Contestant Number 1</small>
+                </div>
+               
+              </div>
+               <hr style="margin-top: 10px !important; margin-bottom: 0px !important;">
+            </li>
+            
+            <li class="list-group-item">
+              <div class="media">
+                <div class="media-left">
+                  <a class="avatar avatar-online" href="javascript:void(0)">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                    <i></i>
+                  </a>
+                </div>
+                <div class="media-body">
+                  <div class="pull-right">
+                    Votes: 1120
+                  </div>
+                  <div><a class="name" href="javascript:void(0)">Bako Shamim</a></div>
+                  <small>Contestant Number 1</small>
+                </div>
+              </div>
+              <hr style="margin-top: 10px !important; margin-bottom: 0px !important;">
+            </li>
+            
+            <li class="list-group-item">
+              <div class="media">
+                <div class="media-left">
+                  <a class="avatar avatar-online" href="javascript:void(0)">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                    <i></i>
+                  </a>
+                </div>
+                <div class="media-body">
+                  <div class="pull-right">
+                    <span class="	glyphicon glyphicon-check "></span> Votes: 1120
+                  </div>
+                  <div><a class="name" href="javascript:void(0)">Bako Shamim</a></div>
+                  <small>Contestant Number 1</small>
+                </div>
+              </div>
+               <hr style="margin-top: 10px !important; margin-bottom: 0px !important;">
+            </li>
+             
+          </ul>
+         
+        </div>
       </div>
     </div>
-  </div>
-<%  end %>
 </div>
-</div>
+              </div>
+            
+          </div>
+        </div>

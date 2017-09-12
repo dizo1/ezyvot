@@ -12,7 +12,8 @@ class PageantsController < ApplicationController
   # GET /pageants/1.json
   def show
     @pageant = Pageant.find(params[:id])
-    @contestants = Contestant.where(pageant_id: @pageant.id).order("created_at DESC")
+    @contestants = Contestant.where(pageant_id: @pageant.id).order("cached_votes_up DESC")
+    #@contestants = Contestant.all.order(:cached_votes_up => :desc )
   end
 
   # GET /pageants/new
@@ -27,7 +28,7 @@ class PageantsController < ApplicationController
 
     respond_to do |format|
       if @pageant.save
-        format.html { redirect_to @pageant, notice: 'Pageant was successfully created.' }
+        format.html { redirect_to @pageant, notice: 'A Contest Was Successfully Created.' }
         format.json { render :show, status: :created, location: @pageant }
       else
         format.html { render :new }
@@ -46,7 +47,7 @@ class PageantsController < ApplicationController
   def update
     respond_to do |format|
       if @pageant.update(pageant_params)
-        format.html { redirect_to @pageant, notice: 'Pageant was successfully updated.' }
+        format.html { redirect_to @pageant, notice: 'Contest Was Successfully Updated.' }
         format.json { render :show, status: :ok, location: @pageant }
       else
         format.html { render :edit }
@@ -60,7 +61,7 @@ class PageantsController < ApplicationController
   def destroy
     @pageant.destroy
     respond_to do |format|
-      format.html { redirect_to pageants_url, notice: 'Pageant was successfully destroyed.' }
+      format.html { redirect_to pageants_url, notice: 'Contest Was Successfully Destroyed.' }
       format.json { head :no_content }
     end
   end
