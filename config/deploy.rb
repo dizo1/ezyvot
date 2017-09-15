@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-lock "3.9.0"
+lock "3.9.1"
 
 set :application, "ezyvote"
 set :repo_url, "https://github.com/dizo1/ezyvot.git"
@@ -8,7 +8,7 @@ set :repo_url, "https://github.com/dizo1/ezyvot.git"
 #set :stages, %w(production)
 
 set :deploy_to, '/home/deploy/ezyvote'
-
+#set :rbenv, '/home/deploy/.rbenv'
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
