@@ -117,13 +117,23 @@
                           
                           <%  if user_signed_in? && current_user.id == @pageant.user_id %>
                       
-                          <button type="button" class="btn btn-default btn-sm" style="margin-right: 5px;">
+                          <!--<button type="button" class="btn btn-default btn-sm" style="margin-right: 5px;">
                               <span class="glyphicon glyphicon-pencil "></span> &nbsp; Edit
                           </button>
                 
                           <button type="button" class="btn btn-default btn-sm"  style="margin-right: 5px;">
                             <span class="glyphicon glyphicon-remove "></span> Delete
+                          </button>-->
+                          
+                          <button type="button" class="btn btn-default btn-sm">
+                          <span class="glyphicon glyphicon-pencil "></span> &nbsp; <%= link_to 'Edit', edit_pageant_contestant_path(@pageant) %>
                           </button>
+            
+                          <button type="button" class="btn btn-default btn-sm">
+                          <span class="glyphicon glyphicon-remove "></span> &nbsp; <%= link_to "Delete", pageant_contestant_path(@pageant), method: :delete,
+                                 data: { confirm: "Are you sure you want to delete this pageant?"} %>
+                          </button>
+                          
                            <% end  %>
                           </div>
                       </div>
